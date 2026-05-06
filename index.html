@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karolina Puente × Vibramente — Propuesta de Partnership Estratégico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0a1628;
+    --navy-mid: #122040;
+    --gold: #c9a227;
+    --gold-light: #e8c84a;
+    --gold-dark: #9a7a1a;
+    --white: #ffffff;
+    --off-white: #f5f0e8;
+    --gray: #8a9ab5;
+    --text-dark: #1a2b45;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background: var(--navy);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* ===== NAVBAR ===== */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 48px;
+    background: rgba(10, 22, 40, 0.85);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.2);
+    transition: all 0.3s ease;
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+  }
+  .nav-badge {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    color: var(--navy);
+    padding: 6px 18px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  /* ===== PARTICLES ===== */
+  #particles {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    pointer-events: none; z-index: 0; overflow: hidden;
+  }
+  .particle {
+    position: absolute;
+    width: 2px; height: 2px;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: floatUp linear infinite;
+  }
+  @keyframes floatUp {
+    0% { opacity: 0; transform: translateY(100vh) scale(0); }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.2; }
+    100% { opacity: 0; transform: translateY(-10vh) scale(1.5); }
+  }
+
+  /* ===== HERO ===== */
+  .hero {
+    position: relative; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #040d1a 0%, #0a1628 40%, #122040 100%);
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: 
+      radial-gradient(ellipse at 70% 50%, rgba(201, 162, 39, 0.08) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(18, 32, 64, 0.9) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: relative; z-index: 2;
+    max-width: 1300px; margin: 0 auto;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 60px; align-items: center;
+    padding: 120px 48px 80px;
+  }
+  .hero-text { }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(201, 162, 39, 0.1);
+    border: 1px solid rgba(201, 162, 39, 0.3);
+    padding: 8px 18px; border-radius: 30px;
+    font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 24px;
+  }
+  .hero-tag::before { content: '◆'; font-size: 0.6rem; }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.2rem, 4vw, 3.6rem);
+    line-height: 1.15;
+    margin-bottom: 24px;
+  }
+  .hero-title span { color: var(--gold); }
+  .hero-subtitle {
+    font-size: 1rem; line-height: 1.7;
+    color: var(--gray); margin-bottom: 36px;
+    max-width: 520px;
+  }
+  .hero-stats {
+    display: flex; gap: 32px; margin-bottom: 40px;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    font-size: 2rem; font-weight: 800;
+    color: var(--gold); display: block;
+  }
+  .hero-stat .label {
+    font-size: 0.65rem; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--gray);
+  }
+  .hero-image-wrap {
+    position: relative;
+  }
+  .hero-img-frame {
+    position: relative; border-radius: 20px; overflow: hidden;
+    border: 2px solid rgba(201, 162, 39, 0.3);
+    box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 60px rgba(201, 162, 39, 0.1);
+  }
+  .hero-img-frame img {
+    width: 100%; height: 520px; object-fit: cover; object-position: top;
+    display: block;
+  }
+  .hero-img-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(10,22,40,0.95) 0%, transparent 100%);
+    padding: 32px 24px 24px;
+  }
+  .hero-name-badge {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .hero-role-badge {
+    color: var(--gold); font-size: 0.8rem;
+    letter-spacing: 1px; text-transform: uppercase;
+  }
+  .hero-certs {
+    display: flex; gap: 10px; margin-top: 12px; flex-wrap: wrap;
+  }
+  .cert-badge {
+    background: rgba(201, 162, 39, 0.15);
+    border: 1px solid rgba(201, 162, 39, 0.4);
+    color: var(--gold-light); font-size: 0.62rem;
+    padding: 4px 10px; border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .float-card {
+    position: absolute; top: -20px; right: -20px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    color: var(--navy); padding: 16px 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    font-weight: 800; font-size: 0.8rem;
+    text-align: center; line-height: 1.3;
+  }
+  .float-card .big { font-size: 1.4rem; display: block; }
+
+  /* ===== SECTION BASE ===== */
+  section { position: relative; z-index: 1; }
+
+  /* ===== PROFILE SECTION ===== */
+  .profile-section {
+    background: linear-gradient(180deg, #040d1a 0%, var(--navy) 100%);
+    padding: 100px 48px;
+  }
+  .container { max-width: 1300px; margin: 0 auto; }
+  .section-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    color: var(--gold); font-size: 0.7rem; letter-spacing: 3px;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .section-tag::after {
+    content: ''; display: block; width: 40px; height: 1px;
+    background: var(--gold); opacity: 0.5;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.8rem);
+    line-height: 1.2; margin-bottom: 48px;
+  }
+  .section-title .accent { color: var(--gold); }
+
+  .profile-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: start;
+  }
+  .profile-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 20px; padding: 36px;
+    transition: all 0.4s ease;
+  }
+  .profile-card:hover {
+    background: rgba(201, 162, 39, 0.05);
+    border-color: rgba(201, 162, 39, 0.25);
+    transform: translateY(-4px);
+  }
+  .card-icon {
+    width: 48px; height: 48px;
+    background: linear-gradient(135deg, rgba(201,162,39,0.2), rgba(201,162,39,0.05));
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 12px; display: flex; align-items: center;
+    justify-content: center; font-size: 1.3rem; margin-bottom: 20px;
+  }
+  .card-title {
+    font-weight: 700; font-size: 1rem;
+    margin-bottom: 12px; color: var(--off-white);
+  }
+  .card-text {
+    font-size: 0.88rem; line-height: 1.75;
+    color: var(--gray);
+  }
+  .highlight-list {
+    list-style: none; padding: 0;
+  }
+  .highlight-list li {
+    padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.85rem; color: var(--gray);
+    display: flex; align-items: flex-start; gap: 12px;
+  }
+  .highlight-list li::before {
+    content: '▸'; color: var(--gold); flex-shrink: 0; margin-top: 1px;
+  }
+  .highlight-list li:last-child { border-bottom: none; }
+  .highlight-list li strong { color: var(--white); }
+
+  /* ===== PARALLAX BANNER ===== */
+  .parallax-banner {
+    position: relative; height: 340px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .parallax-bg {
+    position: absolute; inset: -60px;
+    background-size: cover; background-position: center;
+    background-attachment: fixed;
+    transition: transform 0.1s linear;
+  }
+  .parallax-overlay {
+    position: absolute; inset: 0;
+  }
+  .parallax-content {
+    position: relative; z-index: 2;
+    text-align: center; padding: 0 48px;
+  }
+  .parallax-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 3vw, 2.2rem);
+    font-style: italic; line-height: 1.4;
+    color: var(--white); text-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    max-width: 800px;
+  }
+  .parallax-quote span { color: var(--gold); }
+  .parallax-author {
+    margin-top: 16px; font-size: 0.8rem;
+    text-transform: uppercase; letter-spacing: 2px;
+    color: var(--gold); opacity: 0.8;
+  }
+
+  /* Banner 1 */
+  .banner-1 .parallax-bg {
+    background: linear-gradient(135deg, #040d1a 0%, #0d1e38 50%, #1a2f55 100%);
+  }
+  .banner-1 .parallax-overlay {
+    background: linear-gradient(135deg, rgba(201,162,39,0.12) 0%, rgba(4,13,26,0.7) 100%);
+  }
+  /* Banner 2 */
+  .banner-2 .parallax-bg {
+    background: linear-gradient(135deg, #091520 0%, #0f2035 50%, #162845 100%);
+  }
+  .banner-2 .parallax-overlay {
+    background: linear-gradient(225deg, rgba(201,162,39,0.1) 0%, rgba(9,21,32,0.8) 100%);
+  }
+  /* Banner 3 */
+  .banner-3 .parallax-bg {
+    background: linear-gradient(135deg, #060f1f 0%, #0c1a30 100%);
+  }
+  .banner-3 .parallax-overlay {
+    background: linear-gradient(45deg, rgba(201,162,39,0.15) 0%, rgba(6,15,31,0.75) 100%);
+  }
+
+  /* ===== SINERGIAS ===== */
+  .sinergias-section {
+    background: var(--navy-mid);
+    padding: 100px 48px;
+  }
+  .sinergia-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 28px; margin-top: 16px;
+  }
+  .sinergia-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 32px;
+    position: relative; overflow: hidden;
+    transition: all 0.4s ease;
+  }
+  .sinergia-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--gold-light), var(--gold));
+    opacity: 0; transition: opacity 0.4s;
+  }
+  .sinergia-card:hover::before { opacity: 1; }
+  .sinergia-card:hover {
+    background: rgba(201,162,39,0.06);
+    border-color: rgba(201,162,39,0.3);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+  }
+  .sinergia-num {
+    font-size: 3rem; font-weight: 900;
+    color: rgba(201,162,39,0.15);
+    font-family: 'Playfair Display', serif;
+    position: absolute; top: 20px; right: 24px;
+  }
+  .sinergia-icon { font-size: 2rem; margin-bottom: 16px; }
+  .sinergia-title {
+    font-weight: 700; font-size: 1rem;
+    margin-bottom: 12px; color: var(--gold-light);
+  }
+  .sinergia-text {
+    font-size: 0.84rem; line-height: 1.7; color: var(--gray);
+  }
+
+  /* ===== PROPUESTA VOCERA ===== */
+  .vocera-section {
+    background: linear-gradient(180deg, var(--navy) 0%, #040d1a 100%);
+    padding: 100px 48px;
+  }
+  .vocera-hero-grid {
+    display: grid; grid-template-columns: 5fr 4fr;
+    gap: 60px; align-items: center;
+    margin-top: 48px;
+  }
+  .role-cards { display: flex; flex-direction: column; gap: 20px; }
+  .role-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 28px;
+    display: flex; gap: 20px; align-items: flex-start;
+    transition: all 0.3s ease;
+  }
+  .role-card:hover {
+    background: rgba(201,162,39,0.05);
+    border-color: rgba(201,162,39,0.25);
+    transform: translateX(6px);
+  }
+  .role-icon {
+    width: 52px; height: 52px; flex-shrink: 0;
+    background: linear-gradient(135deg, rgba(201,162,39,0.2), rgba(201,162,39,0.05));
+    border: 1px solid rgba(201,162,39,0.3);
+    border-radius: 14px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 1.5rem;
+  }
+  .role-content { }
+  .role-title { font-weight: 700; font-size: 1rem; color: var(--off-white); margin-bottom: 8px; }
+  .role-text { font-size: 0.84rem; line-height: 1.7; color: var(--gray); }
+  .pitch-box {
+    background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(201,162,39,0.02));
+    border: 1px solid rgba(201,162,39,0.25);
+    border-radius: 24px; padding: 40px;
+  }
+  .pitch-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; margin-bottom: 20px;
+  }
+  .pitch-text {
+    font-size: 0.88rem; line-height: 1.8; color: var(--gray);
+    margin-bottom: 24px;
+  }
+  .pitch-bullets { list-style: none; }
+  .pitch-bullets li {
+    padding: 8px 0; font-size: 0.84rem; color: var(--gray);
+    display: flex; gap: 12px; align-items: flex-start;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .pitch-bullets li:last-child { border: none; }
+  .pitch-bullets li::before {
+    content: '✦'; color: var(--gold); flex-shrink: 0; font-size: 0.7rem; margin-top: 3px;
+  }
+  .pitch-bullets li strong { color: var(--white); }
+
+  /* ===== ROI SECTION ===== */
+  .roi-section {
+    background: var(--navy-mid);
+    padding: 100px 48px;
+  }
+  .roi-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 24px; margin-bottom: 60px;
+  }
+  .roi-card {
+    background: linear-gradient(135deg, rgba(201,162,39,0.08), rgba(201,162,39,0.02));
+    border: 1px solid rgba(201,162,39,0.2);
+    border-radius: 20px; padding: 32px 24px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .roi-card:hover {
+    background: rgba(201,162,39,0.12);
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+  }
+  .roi-icon { font-size: 2rem; margin-bottom: 12px; }
+  .roi-num {
+    font-size: 2.4rem; font-weight: 900;
+    color: var(--gold); display: block; line-height: 1;
+    margin-bottom: 8px;
+  }
+  .roi-label {
+    font-size: 0.75rem; text-transform: uppercase;
+    letter-spacing: 1.5px; color: var(--gray);
+    line-height: 1.4;
+  }
+
+  .roadmap-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 0; position: relative;
+  }
+  .roadmap-grid::before {
+    content: ''; position: absolute;
+    top: 36px; left: 10%; right: 10%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.3;
+  }
+  .roadmap-step {
+    text-align: center; padding: 0 16px;
+    position: relative;
+  }
+  .step-circle {
+    width: 72px; height: 72px;
+    background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+    border-radius: 50%; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 1.3rem; margin: 0 auto 20px;
+    box-shadow: 0 8px 25px rgba(201,162,39,0.3);
+    position: relative; z-index: 2;
+  }
+  .step-title { font-weight: 700; font-size: 0.9rem; margin-bottom: 8px; color: var(--off-white); }
+  .step-text { font-size: 0.78rem; line-height: 1.6; color: var(--gray); }
+  .step-badge {
+    display: inline-block; background: rgba(201,162,39,0.15);
+    color: var(--gold); font-size: 0.62rem;
+    padding: 4px 10px; border-radius: 20px;
+    letter-spacing: 1px; margin-bottom: 12px;
+    border: 1px solid rgba(201,162,39,0.3);
+  }
+
+  /* ===== MEDIA SECTION ===== */
+  .media-section {
+    background: linear-gradient(180deg, #040d1a 0%, var(--navy) 100%);
+    padding: 100px 48px;
+  }
+  .media-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .media-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px; padding: 28px;
+    transition: all 0.3s ease;
+  }
+  .media-card:hover {
+    background: rgba(201,162,39,0.05);
+    border-color: rgba(201,162,39,0.25);
+    transform: translateY(-4px);
+  }
+  .media-source {
+    font-size: 0.65rem; text-transform: uppercase;
+    letter-spacing: 2px; color: var(--gold);
+    margin-bottom: 12px; display: flex; align-items: center; gap: 8px;
+  }
+  .media-source::before {
+    content: ''; width: 20px; height: 1px; background: var(--gold); opacity: 0.5;
+  }
+  .media-headline {
+    font-weight: 700; font-size: 0.9rem;
+    line-height: 1.5; color: var(--off-white);
+    margin-bottom: 12px;
+  }
+  .media-text {
+    font-size: 0.8rem; line-height: 1.7; color: var(--gray);
+  }
+  .media-logo {
+    width: 32px; height: 32px;
+    background: rgba(201,162,39,0.15);
+    border-radius: 8px; display: flex;
+    align-items: center; justify-content: center;
+    font-size: 0.7rem; font-weight: 800;
+    color: var(--gold); margin-bottom: 16px;
+  }
+
+  /* ===== AUDIENCE SECTION ===== */
+  .audience-section {
+    background: var(--navy-mid); padding: 100px 48px;
+  }
+  .audience-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 48px; align-items: start;
+  }
+  .audience-profile {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 36px;
+  }
+  .profile-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem; margin-bottom: 6px;
+  }
+  .profile-tagline {
+    color: var(--gold); font-size: 0.78rem;
+    letter-spacing: 1.5px; text-transform: uppercase;
+    margin-bottom: 24px; padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .profile-item {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+    font-size: 0.84rem; color: var(--gray);
+  }
+  .profile-item:last-child { border: none; }
+  .profile-item-icon { font-size: 1rem; flex-shrink: 0; color: var(--gold); }
+  .profile-item-text strong { color: var(--white); display: block; margin-bottom: 2px; }
+
+  /* ===== CTA ===== */
+  .cta-section {
+    background: linear-gradient(135deg, #040d1a 0%, #0a1628 100%);
+    padding: 120px 48px; text-align: center;
+    position: relative; overflow: hidden;
+  }
+  .cta-glow {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,162,39,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .cta-eyebrow {
+    color: var(--gold); font-size: 0.7rem;
+    letter-spacing: 3px; text-transform: uppercase;
+    margin-bottom: 20px;
+  }
+  .cta-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.2; margin-bottom: 20px;
+  }
+  .cta-title .accent { color: var(--gold); }
+  .cta-subtitle {
+    color: var(--gray); font-size: 1rem;
+    max-width: 600px; margin: 0 auto 48px;
+    line-height: 1.7;
+  }
+  .cta-btn {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    color: white; text-decoration: none;
+    padding: 20px 44px; border-radius: 60px;
+    font-weight: 700; font-size: 1rem;
+    box-shadow: 0 10px 40px rgba(37,211,102,0.3);
+    transition: all 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+  }
+  .cta-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(37,211,102,0.4);
+    animation: none;
+  }
+  .cta-btn .wa-icon { font-size: 1.3rem; }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 10px 40px rgba(37,211,102,0.3); }
+    50% { box-shadow: 0 10px 60px rgba(37,211,102,0.5); }
+  }
+  .cta-divider {
+    margin: 48px auto;
+    display: flex; align-items: center; gap: 20px;
+    max-width: 400px; color: var(--gray); font-size: 0.8rem;
+  }
+  .cta-divider::before, .cta-divider::after {
+    content: ''; flex: 1; height: 1px;
+    background: rgba(255,255,255,0.1);
+  }
+  .footer-brand {
+    margin-top: 48px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem; color: rgba(255,255,255,0.2);
+  }
+  .footer-brand span { color: var(--gold); opacity: 0.6; }
+
+  /* ===== ANIMATIONS ===== */
+  .fade-in {
+    opacity: 0; transform: translateY(30px);
+    transition: all 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1; transform: translateY(0);
+  }
+  .fade-in-left {
+    opacity: 0; transform: translateX(-40px);
+    transition: all 0.7s ease;
+  }
+  .fade-in-left.visible {
+    opacity: 1; transform: translateX(0);
+  }
+  .fade-in-right {
+    opacity: 0; transform: translateX(40px);
+    transition: all 0.7s ease;
+  }
+  .fade-in-right.visible {
+    opacity: 1; transform: translateX(0);
+  }
+
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 1024px) {
+    .hero-grid, .profile-grid, .vocera-hero-grid,
+    .audience-grid { grid-template-columns: 1fr; }
+    .sinergia-grid, .roi-grid, .roadmap-grid,
+    .media-grid { grid-template-columns: 1fr 1fr; }
+    nav { padding: 14px 24px; }
+    .profile-section, .sinergias-section, .vocera-section,
+    .roi-section, .media-section, .audience-section, .cta-section {
+      padding: 70px 24px;
+    }
+    .hero-grid { padding: 120px 24px 60px; }
+  }
+  @media (max-width: 640px) {
+    .sinergia-grid, .roi-grid, .roadmap-grid,
+    .media-grid { grid-template-columns: 1fr; }
+    .hero-stats { flex-wrap: wrap; gap: 20px; }
+    .float-card { display: none; }
+  }
+
+  /* ===== DIVIDER ===== */
+  .gold-divider {
+    width: 60px; height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 16px 0 48px;
+  }
+
+  /* Skill bar */
+  .skill-bar-wrap { margin-bottom: 16px; }
+  .skill-label {
+    display: flex; justify-content: space-between;
+    font-size: 0.78rem; color: var(--gray);
+    margin-bottom: 6px;
+  }
+  .skill-label span:last-child { color: var(--gold); font-weight: 700; }
+  .skill-track {
+    height: 4px; background: rgba(255,255,255,0.06);
+    border-radius: 4px; overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-dark), var(--gold-light));
+    border-radius: 4px;
+    width: 0%;
+    transition: width 1.2s ease;
+  }
+</style>
+</head>
+<body>
+
+<!-- PARTICLES -->
+<div id="particles"></div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-logo">Vibramente × KP</div>
+  <div class="nav-badge">Partnership Estratégico · Confidencial</div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div class="hero-text fade-in-left">
+      <div class="hero-tag">Análisis de Partnership Estratégico</div>
+      <h1 class="hero-title">
+        La Voz que<br>
+        <span>Latinoamérica</span><br>
+        Necesita Escuchar
+      </h1>
+      <p class="hero-subtitle">
+        Karolina Puente — pionera ecuatoriana en IA, 2× Récord Guinness, CEO de Mr. Fox — como <strong>vocera y partner estratégica</strong> de Vibramente para la revolución de la Inteligencia Agentica en Ecuador y Latinoamérica.
+      </p>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="num">40+</span>
+          <span class="label">Conferencias<br>Internacionales</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">20K+</span>
+          <span class="label">Profesionales<br>Impactados</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">100+</span>
+          <span class="label">Empresas<br>Asesoradas</span>
+        </div>
+        <div class="hero-stat">
+          <span class="num">2×</span>
+          <span class="label">Récord<br>Guinness</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-image-wrap fade-in-right">
+      <div class="float-card">
+        <span class="big">🏆</span>
+        Forbes<br>Latam
+      </div>
+      <div class="hero-img-frame">
+        <img 
+          src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80" 
+          alt="Karolina Puente — CEO Mr. Fox"
+          onerror="this.src='https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=600&q=80'"
+        >
+        <div class="hero-img-overlay">
+          <div class="hero-name-badge">Karolina Puente</div>
+          <div class="hero-role-badge">CEO Mr. Fox · Estratega IA · Speaker Internacional</div>
+          <div class="hero-certs">
+            <span class="cert-badge">Forbes Latam</span>
+            <span class="cert-badge">2× Guinness</span>
+            <span class="cert-badge">Future Innovation Summit 2025</span>
+            <span class="cert-badge">Ekos Grandes Marcas Ecuador</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PERFIL COMPLETO ===== -->
+<section class="profile-section">
+  <div class="container">
+    <div class="section-tag">Investigación Completa</div>
+    <div class="gold-divider"></div>
+    <h2 class="section-title fade-in">
+      Quién es <span class="accent">Karolina Puente</span><br>y por qué importa
+    </h2>
+
+    <div class="profile-grid">
+      <div class="fade-in-left">
+        <div class="profile-card">
+          <div class="card-icon">👤</div>
+          <div class="card-title">Perfil Personal</div>
+          <ul class="highlight-list">
+            <li><strong>Nombre:</strong> Karolina Puente Tufiño</li>
+            <li><strong>Edad:</strong> 40 años</li>
+            <li><strong>Ciudad:</strong> Quito, Ecuador</li>
+            <li><strong>Formación:</strong> Ingeniería Comercial y Marketing — Universidad Internacional SEK</li>
+            <li><strong>Familia:</strong> Esposa y madre (factor que humaniza su marca)</li>
+            <li><strong>Pasiones:</strong> Yoga, conferencias internacionales, familia, innovación</li>
+            <li><strong>Filosofía:</strong> "No te pagan por lo que haces, te pagan por quién eres"</li>
+          </ul>
+        </div>
+
+        <br>
+
+        <div class="profile-card">
+          <div class="card-icon">🏢</div>
+          <div class="card-title">Mr. Fox — Su Imperio</div>
+          <ul class="highlight-list">
+            <li><strong>Fundada:</strong> 2012 (con su hermano, mientras aún era dependiente laboral)</li>
+            <li><strong>Tipo:</strong> Agencia de marketing 360° con IA integrada</li>
+            <li><strong>Mercados:</strong> Ecuador · Colombia · USA</li>
+            <li><strong>Clientes:</strong> Coca-Cola, Sony, Hyundai, Reebok, Cinemark, Santander, Yanbal, ABB</li>
+            <li><strong>Equipo:</strong> 16 personas en múltiples países, especialistas en IA</li>
+            <li><strong>Modelo:</strong> Máx. 18 clientes/mes — alta calidad, cercanía persona a persona</li>
+            <li><strong>Algoritmo IA propio:</strong> Desde 2019 para segmentación publicitaria</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="fade-in-right">
+        <div class="profile-card" style="margin-bottom: 28px;">
+          <div class="card-icon">🎤</div>
+          <div class="card-title">Charlas que Vende</div>
+          <ul class="highlight-list">
+            <li><strong>"No te pagan por lo que haces, te pagan por quien eres"</strong> — 35,000+ personas impactadas</li>
+            <li><strong>"Sin IA no te van a escuchar"</strong> — Mensaje disruptivo sobre IA como imperativo</li>
+            <li><strong>"Entre el espejo y el algoritmo"</strong> — Redes sociales, IA, salud mental digital</li>
+            <li><strong>"Relación mata transacción"</strong> — El capital relacional como ventaja competitiva</li>
+            <li><strong>"Reinventarse para permanecer"</strong> — Transformación personal y profesional</li>
+          </ul>
+        </div>
+
+        <div class="profile-card" style="margin-bottom: 28px;">
+          <div class="card-icon">📊</div>
+          <div class="card-title">Presencia Digital & Reconocimientos</div>
+          <div class="skill-bar-wrap" style="margin-top:16px;">
+            <div class="skill-label"><span>Instagram (@karolinapuente)</span><span>31.1K</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--target:72%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-label"><span>LinkedIn (500+ conexiones)</span><span>Alta</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--target:85%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-label"><span>Autoridad en IA - Latam</span><span>Referente</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--target:95%"></div></div>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-label"><span>Storytelling & Marca Personal</span><span>Top</span></div>
+            <div class="skill-track"><div class="skill-fill" style="--target:98%"></div></div>
+          </div>
+        </div>
+
+        <div class="profile-card">
+          <div class="card-icon">🌍</div>
+          <div class="card-title">Hitos Internacionales</div>
+          <ul class="highlight-list">
+            <li><strong>Future Innovation Summit 2025</strong> — Dubai (representó Ecuador en IA)</li>
+            <li><strong>Titanes Sabaneta</strong> — Colombia (keynote "Sin IA no te van a escuchar")</li>
+            <li><strong>Forbes Latam</strong> — Referente en reputación y storytelling</li>
+            <li><strong>NY Finance</strong> — Estratega pionera en IA en Latam</li>
+            <li><strong>San Francisco Herald</strong> — "Ecuadorian Entrepreneur Transforming Marketing"</li>
+            <li><strong>2× Récord Guinness</strong> — Logros reconocidos globalmente</li>
+            <li><strong>Social Media Day Ecuador</strong> — Embajadora oficial</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARALLAX 1 ===== -->
+<div class="parallax-banner banner-1">
+  <div class="parallax-bg"></div>
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content fade-in">
+    <p class="parallax-quote">
+      "Sin IA no te van a escuchar. <span>La inteligencia artificial ya no es una opción</span>, es una exigencia para la supervivencia empresarial."
+    </p>
+    <p class="parallax-author">— Karolina Puente, Titanes Sabaneta 2025</p>
+  </div>
+</div>
+
+<!-- ===== SINERGIAS ===== -->
+<section class="sinergias-section">
+  <div class="container">
+    <div class="section-tag">Análisis Estratégico</div>
+    <div class="gold-divider"></div>
+    <h2 class="section-title fade-in">
+      Las <span class="accent">6 Sinergias Perfectas</span><br>
+      Karolina × Vibramente
+    </h2>
+
+    <div class="sinergia-grid">
+
+      <div class="sinergia-card fade-in">
+        <div class="sinergia-num">01</div>
+        <div class="sinergia-icon">🤝</div>
+        <div class="sinergia-title">Mismo Idioma: La IA como Imperativo</div>
+        <div class="sinergia-text">Karolina ya predica que "sin IA no te van a escuchar" — el mensaje exacto que Vibramente necesita amplificar. No hay que convencerla de nada: ya vive en ese mundo.</div>
+      </div>
+
+      <div class="sinergia-card fade-in">
+        <div class="sinergia-num">02</div>
+        <div class="sinergia-icon">🎯</div>
+        <div class="sinergia-title">Audiencias Complementarias</div>
+        <div class="sinergia-text">Sus conferencias llegan a CEOs, ejecutivos, equipos de liderazgo y empresarios de Ecuador, Colombia y USA — el mercado objetivo exacto de la Inteligencia Agentica.</div>
+      </div>
+
+      <div class="sinergia-card fade-in">
+        <div class="sinergia-num">03</div>
+        <div class="sinergia-icon">🔥</div>
+        <div class="sinergia-title">Credibilidad = Ventas Aceleradas</div>
+        <div class="sinergia-text">Karolina ya tiene la confianza de 100+ empresas y el respaldo de Forbes, Guinness y medios internacionales. Su endorsement convierte oportunidades frías en calientes al instante.</div>
+      </div>
+
+      <div class="sinergia-card fade-in">
+        <div class="sinergia-num">04</div>
+        <div class="sinergia-icon">🌎</div>
+        <div class="sinergia-title">Expansión Inmediata a 3 Mercados</div>
+        <div class="sinergia-text">Mr. Fox opera en Ecuador, Colombia y USA. Karolina puede abrir puertas en los 3 mercados simultáneamente sin que Vibramente necesite construir presencia desde cero.</div>
+      </div>
+
+      <div class="sinergia-card fade-in">
+        <div class="sinergia-num">05</div>
+        <div class="sinergia-icon">⚡</div>
+        <div class="sinergia-title">Tech + Marketing = Producto Completo</div>
+        <div class="sinergia-text">Vibramente aporta la capa de Inteligencia Agentica; Mr. Fox aporta el posicionamiento, la marca y los canales. Juntos ofrecen un producto 360° que ninguno puede dar por separado.</div>
+      </div>
+
+      <div class="sinergia-card fade-in">
+        <div class="sinergia-num">06</div>
+        <div class="sinergia-icon">📖</div>
+        <div class="sinergia-title">Storytelling que Vende Tecnología</div>
+        <div class="sinergia-text">La IA agentica es compleja. Karolina tiene la habilidad única de traducir conceptos técnicos en narrativas emocionales que ejecutivos entienden y quieren comprar.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARALLAX 2 ===== -->
+<div class="parallax-banner banner-2">
+  <div class="parallax-bg"></div>
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content fade-in">
+    <p class="parallax-quote">
+      "Los puntos de contacto te pueden llevar a donde tú quieras. <span>Relación mata transacción</span>: tu capital más valioso es tu red."
+    </p>
+    <p class="parallax-author">— Karolina Puente, Forbes Ecuador 2024</p>
+  </div>
+</div>
+
+<!-- ===== PROPUESTA VOCERA ===== -->
+<section class="vocera-section">
+  <div class="container">
+    <div class="section-tag">Propuesta de Valor</div>
+    <div class="gold-divider"></div>
+    <h2 class="section-title fade-in">
+      El Rol de Karolina<br>en <span class="accent">Vibramente</span>
+    </h2>
+
+    <div class="vocera-hero-grid">
+      <div class="role-cards">
+
+        <div class="role-card fade-in">
+          <div class="role-icon">📢</div>
+          <div class="role-content">
+            <div class="role-title">Vocera Oficial de Vibramente</div>
+            <div class="role-text">Karolina representa el rostro público de Vibramente en conferencias, medios y redes. Su autoridad en IA ya está construida — solo hay que alinear el mensaje con la propuesta agentica. Cada charla es un pitch de ventas implícito.</div>
+          </div>
+        </div>
+
+        <div class="role-card fade-in">
+          <div class="role-icon">🤝</div>
+          <div class="role-content">
+            <div class="role-title">Partner Estratégico de Distribución</div>
+            <div class="role-text">Sus 100+ clientes empresariales son el pipeline de ventas de Vibramente. Mr. Fox puede incluir la Inteligencia Agentica como capa premium de sus servicios, generando comisiones y co-ventas sin fricción.</div>
+          </div>
+        </div>
+
+        <div class="role-card fade-in">
+          <div class="role-icon">🌟</div>
+          <div class="role-content">
+            <div class="role-title">Embajadora en Eventos Internacionales</div>
+            <div class="sinergia-text" style="margin-top:8px; font-size:0.84rem; color:var(--gray);">Ya presente en Dubai (Future Innovation Summit 2025), Colombia, USA. Puede llevar el proyecto Vibramente a escenarios donde Felipe aún no tiene acceso, acelerando el posicionamiento global.</div>
+          </div>
+        </div>
+
+        <div class="role-card fade-in">
+          <div class="role-icon">✍️</div>
+          <div class="role-content">
+            <div class="role-title">Co-Creadora de Contenido IA</div>
+            <div class="role-text">Karolina tiene podcast, libro publicado y presencia en medios. Puede co-crear contenido educativo sobre IA agentica que posicione a Vibramente como el referente técnico detrás de su discurso.</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="pitch-box fade-in-right">
+        <h3 class="pitch-title">El Pitch Perfecto para Karolina</h3>
+        <p class="pitch-text">
+          Karolina ya sabe que "sin IA no te van a escuchar" — pero ella misma admite que la tecnología es su vehículo, no su core. <strong>Vibramente puede ser la tecnología que le da sustancia técnica a su discurso</strong>, y ella puede ser el megáfono que Vibramente necesita.
+        </p>
+        <ul class="pitch-bullets">
+          <li><strong>Propuesta concreta:</strong> Partnership de co-distribución + vocería con revenue sharing sobre clientes cerrados</li>
+          <li><strong>Beneficio para Karolina:</strong> Acceso a tecnología de IA agentica real para fortalecer sus servicios y conferencias</li>
+          <li><strong>Beneficio para Vibramente:</strong> Credibilidad inmediata, pipeline de 100+ empresas y alcance a 3 países</li>
+          <li><strong>Punto de entrada:</strong> Invitarla a ser la primera case study de IA agentica aplicada a una agencia de marketing</li>
+          <li><strong>Hook emocional:</strong> "Sé la primera ecuatoriana en vender IA agentica, no solo hablar de ella"</li>
+          <li><strong>Acción inmediata:</strong> Demo personalizado de Vibramente aplicado a los procesos de Mr. Fox</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PARALLAX 3 ===== -->
+<div class="parallax-banner banner-3">
+  <div class="parallax-bg"></div>
+  <div class="parallax-overlay"></div>
+  <div class="parallax-content fade-in">
+    <p class="parallax-quote">
+      "Si construyes una buena relación y demuestras tu potencial, <span>esa parte del emprendimiento se hace más fácil</span>."
+    </p>
+    <p class="parallax-author">— Karolina Puente, sobre cómo consiguió sus primeros clientes</p>
+  </div>
+</div>
+
+<!-- ===== AUDIENCIAS ===== -->
+<section class="audience-section">
+  <div class="container">
+    <div class="section-tag">Análisis de Audiencia</div>
+    <div class="gold-divider"></div>
+    <h2 class="section-title fade-in">
+      Dos Perfiles que se<br>
+      <span class="accent">Complementan</span>
+    </h2>
+
+    <div class="audience-grid">
+
+      <div class="audience-profile fade-in-left">
+        <div class="profile-name">Karolina Puente</div>
+        <div class="profile-tagline">CEO Mr. Fox · Speaker · Estratega IA</div>
+
+        <div class="profile-item">
+          <div class="profile-item-icon">🎯</div>
+          <div class="profile-item-text">
+            <strong>Fortaleza Principal</strong>
+            Marca personal consolidada, credibilidad en medios internacionales, habilidad narrativa excepcional
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">📣</div>
+          <div class="profile-item-text">
+            <strong>Canal de Influencia</strong>
+            Conferencias presenciales, LinkedIn, Instagram, podcast, artículos en Forbes y medios corporativos
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">🏢</div>
+          <div class="profile-item-text">
+            <strong>Red de Contactos</strong>
+            CEOs, Directores de Marketing, Gerentes Comerciales en Ecuador, Colombia y USA
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">💡</div>
+          <div class="profile-item-text">
+            <strong>Lo que necesita de Vibramente</strong>
+            Tecnología real y demostrable que sustente su discurso y diferencie sus servicios
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">⚡</div>
+          <div class="profile-item-text">
+            <strong>Disparador de Decisión</strong>
+            "Ser la primera en implementar IA agentica en una agencia de marketing en Ecuador"
+          </div>
+        </div>
+      </div>
+
+      <div class="audience-profile fade-in-right">
+        <div class="profile-name">Felipe Salgado</div>
+        <div class="profile-tagline">Fundador Vibramente · Arquitecto IA Agentica</div>
+
+        <div class="profile-item">
+          <div class="profile-item-icon">🎯</div>
+          <div class="profile-item-text">
+            <strong>Fortaleza Principal</strong>
+            Expertise técnico en IA agentica, automatización de procesos, visión estratégica de implementación
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">📣</div>
+          <div class="profile-item-text">
+            <strong>Canal de Influencia</strong>
+            Demos técnicos, propuestas de ROI, talleres especializados (UNICEF, Salud S.A.)
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">🏢</div>
+          <div class="profile-item-text">
+            <strong>Red de Contactos</strong>
+            Sector salud, ONGs, empresas grandes. Penetrando mercado corporate en Ecuador
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">💡</div>
+          <div class="profile-item-text">
+            <strong>Lo que necesita de Karolina</strong>
+            Visibilidad masiva, credibilidad ante audiencias no técnicas, acceso a redes de CEOs y executives
+          </div>
+        </div>
+        <div class="profile-item">
+          <div class="profile-item-icon">⚡</div>
+          <div class="profile-item-text">
+            <strong>Propuesta de Valor Mutua</strong>
+            Karolina es el rostro; Vibramente es el motor. Juntos: el producto de IA más completo de Ecuador
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDIA Y COBERTURA ===== -->
+<section class="media-section">
+  <div class="container">
+    <div class="section-tag">Cobertura Mediática Verificada</div>
+    <div class="gold-divider"></div>
+    <h2 class="section-title fade-in">
+      Lo que los <span class="accent">Medios</span> dicen<br>de Karolina
+    </h2>
+
+    <div class="media-grid">
+
+      <div class="media-card fade-in">
+        <div class="media-logo">F</div>
+        <div class="media-source">Forbes Ecuador</div>
+        <div class="media-headline">"La marketera que ama trabajar con algoritmos"</div>
+        <div class="media-text">Publicado Feb. 2024. Karolina descrita como referente en reputación y storytelling, pionera en IA aplicada al marketing en Ecuador. Perfil completo sobre Mr. Fox y su filosofía.</div>
+      </div>
+
+      <div class="media-card fade-in">
+        <div class="media-logo">EC</div>
+        <div class="media-source">El Comercio Ecuador</div>
+        <div class="media-headline">"Ecuatoriana se destaca en Future Innovation Summit 2025 con aportes en IA"</div>
+        <div class="media-text">Nov. 2025 — Representa a Ecuador en Dubai junto a líderes globales de innovación. Foto con el rey de Camerún. Hito para el mapa de IA en Ecuador.</div>
+      </div>
+
+      <div class="media-card fade-in">
+        <div class="media-logo">NF</div>
+        <div class="media-source">NY Finance</div>
+        <div class="media-headline">"Estratega pionera en IA en Latinoamérica"</div>
+        <div class="media-text">Reconocida internacionalmente como pionera en la integración de inteligencia artificial a estrategias de negocios en el mercado latinoamericano.</div>
+      </div>
+
+      <div class="media-card fade-in">
+        <div class="media-logo">SFH</div>
+        <div class="media-source">San Francisco Herald</div>
+        <div class="media-headline">"An Ecuadorian Entrepreneur Transforming Marketing with Technology"</div>
+        <div class="media-text">Nov. 2024 — CEO de Mr. Fox y 2× Récord Guinness. Una de las figuras más influyentes en la modernización del marketing latinoamericano. Featured en Forbes Latam.</div>
+      </div>
+
+      <div class="media-card fade-in">
+        <div class="media-logo">PF</div>
+        <div class="media-source">Portafolio Colombia</div>
+        <div class="media-headline">"Sin IA no te van a escuchar" — Karolina Puente en Titanes Sabaneta</div>
+        <div class="media-text">Nov. 2025 — Keynote en evento empresarial de Colombia. Mensaje: "La IA ya no es opción, es una exigencia para la supervivencia". Audiencia de altos ejecutivos colombianos.</div>
+      </div>
+
+      <div class="media-card fade-in">
+        <div class="media-logo">EK</div>
+        <div class="media-source">Ekos Ecuador</div>
+        <div class="media-headline">"Grandes Marcas del Ecuador 2024"</div>
+        <div class="media-text">Mr. Fox incluida en el reconocimiento anual a las marcas más importantes del Ecuador. Validación del ecosistema empresarial nacional sobre la relevancia de Karolina y su agencia.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROI Y ROADMAP ===== -->
+<section class="roi-section">
+  <div class="container">
+    <div class="section-tag">Proyección del Partnership</div>
+    <div class="gold-divider"></div>
+    <h2 class="section-title fade-in">
+      El <span class="accent">ROI Proyectado</span><br>
+      de esta Alianza
+    </h2>
+
+    <div class="roi-grid">
+      <div class="roi-card fade-in">
+        <div class="roi-icon">🚀</div>
+        <span class="roi-num">3×</span>
+        <div class="roi-label">Aceleración de<br>Ciclo de Ventas</div>
+      </div>
+      <div class="roi-card fade-in">
+        <div class="roi-icon">🌍</div>
+        <span class="roi-num">3</span>
+        <div class="roi-label">Mercados Activos<br>desde Día 1</div>
+      </div>
+      <div class="roi-card fade-in">
+        <div class="roi-icon">🏢</div>
+        <span class="roi-num">100+</span>
+        <div class="roi-label">Empresas en<br>Pipeline Inicial</div>
+      </div>
+      <div class="roi-card fade-in">
+        <div class="roi-icon">📣</div>
+        <span class="roi-num">51K+</span>
+        <div class="roi-label">Alcance Digital<br>Inmediato (followers)</div>
+      </div>
+    </div>
+
+    <h3 class="section-title fade-in" style="font-size:1.5rem; margin-bottom:40px;">
+      Roadmap de <span class="accent">Implementación</span>
+    </h3>
+
+    <div class="roadmap-grid fade-in">
+      <div class="roadmap-step">
+        <div class="step-badge">Semana 1-2</div>
+        <div class="step-circle">🤝</div>
+        <div class="step-title">Reunión de Alineación</div>
+        <div class="step-text">Presentación de Vibramente a Karolina. Demo personalizado aplicado a Mr. Fox. Explorar fit mutuo y términos del partnership.</div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-badge">Mes 1</div>
+        <div class="step-circle">⚙️</div>
+        <div class="step-title">Piloto Interno</div>
+        <div class="step-text">Implementar IA agentica en uno o dos procesos de Mr. Fox. Karolina experimenta el producto. Se genera el primer caso de éxito documentado.</div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-badge">Mes 2-3</div>
+        <div class="step-circle">📣</div>
+        <div class="step-title">Lanzamiento Público</div>
+        <div class="step-text">Karolina anuncia la alianza en sus redes y conferencias. Co-creación de contenido. Primera charla conjunta "IA Agentica para empresas reales".</div>
+      </div>
+      <div class="roadmap-step">
+        <div class="step-badge">Mes 3-6</div>
+        <div class="step-circle">🌍</div>
+        <div class="step-title">Escala Regional</div>
+        <div class="step-text">Activación en Colombia y USA. Pipeline de clientes de Mr. Fox convirtiendo. Presencia en eventos internacionales como vocera oficial de Vibramente.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <div class="container" style="position:relative; z-index:2;">
+    <p class="cta-eyebrow fade-in">El Momento es Ahora</p>
+    <h2 class="cta-title fade-in">
+      Karolina + Vibramente =<br>
+      <span class="accent">La IA Agentica de Ecuador</span>
+    </h2>
+    <p class="cta-subtitle fade-in">
+      Karolina Puente ya tiene el micrófono, la audiencia y la credibilidad. Vibramente tiene la tecnología y la visión. Esta alianza puede posicionar la Inteligencia Agentica ecuatoriana en el mapa regional.
+    </p>
+    <div class="fade-in">
+      <a href="https://wa.me/593999793094?text=Hola%20Felipe%2C%20vi%20el%20análisis%20de%20Karolina%20Puente%20y%20me%20interesa%20explorar%20la%20alianza%20con%20Vibramente." class="cta-btn">
+        <span class="wa-icon">💬</span>
+        Activar el Partnership — WhatsApp
+      </a>
+    </div>
+    <div class="cta-divider fade-in">Análisis generado con IA por Vibramente</div>
+    <div class="footer-brand fade-in">
+      <span>Vibramente</span> × Karolina Puente · 2026
+    </div>
+  </div>
+</section>
+
+<script>
+  // ===== PARTICLES =====
+  const container = document.getElementById('particles');
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    const size = Math.random() * 3 + 1;
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      width: ${size}px;
+      height: ${size}px;
+      animation-duration: ${Math.random() * 15 + 10}s;
+      animation-delay: ${Math.random() * 10}s;
+    `;
+    container.appendChild(p);
+  }
+
+  // ===== INTERSECTION OBSERVER =====
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        // Animate skill bars
+        if (entry.target.classList.contains('profile-card')) {
+          entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+            const target = bar.style.getPropertyValue('--target') || bar.getAttribute('data-target');
+            if (target) bar.style.width = target;
+          });
+        }
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right').forEach(el => {
+    observer.observe(el);
+  });
+
+  // Also observe profile cards for skill bars
+  document.querySelectorAll('.profile-card').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ===== SKILL BARS on scroll =====
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.querySelectorAll('.skill-fill').forEach(bar => {
+          const target = getComputedStyle(bar).getPropertyValue('--target').trim();
+          if (target) {
+            setTimeout(() => { bar.style.width = target; }, 200);
+          }
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.profile-card').forEach(el => skillObserver.observe(el));
+
+  // ===== NAV SCROLL =====
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('nav');
+    if (window.scrollY > 80) {
+      nav.style.padding = '10px 48px';
+      nav.style.background = 'rgba(4, 13, 26, 0.97)';
+    } else {
+      nav.style.padding = '16px 48px';
+      nav.style.background = 'rgba(10, 22, 40, 0.85)';
+    }
+  });
+
+  // ===== PARALLAX EFFECT =====
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    document.querySelectorAll('.parallax-bg').forEach((bg, i) => {
+      const parent = bg.closest('.parallax-banner');
+      const rect = parent.getBoundingClientRect();
+      const offset = rect.top * 0.3;
+      bg.style.transform = `translateY(${offset}px)`;
+    });
+  });
+</script>
+
+</body>
+</html>

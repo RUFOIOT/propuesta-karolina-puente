@@ -684,6 +684,57 @@
     width: 0%;
     transition: width 1.2s ease;
   }
+
+  /* TABLA PRECIOS */
+  .precios-section {
+    padding: 80px 0;
+    background: #0a1628;
+  }
+  .precios-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+  }
+  .precios-table th {
+    background: rgba(201,168,76,0.15);
+    color: #c9a84c;
+    padding: 16px 20px;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: left;
+    border-bottom: 2px solid #c9a84c;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .precios-table td {
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-size: 0.88rem;
+    color: #8892b0;
+    vertical-align: middle;
+  }
+  .precios-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .precios-table .paq-name { color: #f8f9fa; font-weight: 700; font-size: 0.95rem; }
+  .precios-table .paq-detail { font-size: 0.75rem; color: #c9a84c; margin-top: 4px; }
+  .precios-table .total { color: #f8f9fa; font-weight: 700; font-size: 1rem; }
+  .precios-table .vibramente-amt { color: #e8c96a; font-weight: 700; }
+  .precios-table .mrfox-amt { color: #64ffda; font-weight: 700; }
+  .precios-note {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .precios-note-item {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 8px;
+    padding: 18px 20px;
+    font-size: 0.82rem;
+    color: #8892b0;
+    line-height: 1.7;
+  }
+  @media(max-width: 640px) { .precios-note { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -1230,6 +1281,64 @@
 </section>
 
 <!-- ===== CTA ===== -->
+
+<section class="precios-section">
+  <div class="container">
+    <div class="section-tag">Acuerdo Comercial</div>
+    <div class="gold-divider"></div>
+    <h2 class="section-title fade-in">
+      Estructura de <span class="accent">Paquetes y Distribución</span>
+    </h2>
+    <table class="precios-table fade-in">
+      <thead>
+        <tr>
+          <th>Paquete</th>
+          <th>Total</th>
+          <th>Vibramente (70%)</th>
+          <th>Mr Fox (30%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="paq-name">Starter</div>
+            <div class="paq-detail">1 Agente de IA · 3–4 semanas</div>
+          </td>
+          <td><span class="total">$21,000</span></td>
+          <td><span class="vibramente-amt">$14,700</span></td>
+          <td><span class="mrfox-amt">$6,300</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="paq-name">Growth</div>
+            <div class="paq-detail">5 Agentes de IA · 5–6 semanas</div>
+          </td>
+          <td><span class="total">$45,000</span></td>
+          <td><span class="vibramente-amt">$31,500</span></td>
+          <td><span class="mrfox-amt">$13,500</span></td>
+        </tr>
+        <tr>
+          <td>
+            <div class="paq-name">Enterprise</div>
+            <div class="paq-detail">Hasta 12 Agentes + Escuela de IA · 8–10 semanas</div>
+          </td>
+          <td><span class="total">$100,000</span></td>
+          <td><span class="vibramente-amt">$70,000</span></td>
+          <td><span class="mrfox-amt">$30,000</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="precios-note fade-in">
+      <div class="precios-note-item">
+        📋 <strong style="color:#f8f9fa">Condiciones de pago:</strong> 50% al inicio del proyecto / 50% al lanzamiento. La distribución 70/30 se aplica en cada tramo.
+      </div>
+      <div class="precios-note-item">
+        📋 <strong style="color:#f8f9fa">Upsells futuros:</strong> Cualquier expansión o nuevo proyecto con el mismo cliente seguirá la misma distribución porcentual, salvo acuerdo escrito distinto.
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <div class="cta-glow"></div>
   <div class="container" style="position:relative; z-index:2;">
